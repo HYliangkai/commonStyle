@@ -1,12 +1,22 @@
 //自定义的主题
 
+$theme-color:(
+primary:#409EFF,
+success:#67C23A,
+warning:#E6A23C,
+danger:#F56C6C,
+info:#909399
+);
 
-//主题色
-$main:'#409EFF';
-$green:'#67C23A';
-$yellow:'#E6A23C';
-$red:'#F56C6C';
-$grey:'#909399';
+
+@each $name,$color in $theme-color{
+  // $var-name: unquote("$" + $name);
+  // #{$var-name}: $color;
+
+  .bg-#{$name}{ background-color:$color;}
+  .color-#{$name}{ color:$color;}
+  .border-#{$name}{ border-color:$color;}
+}
 
 
 

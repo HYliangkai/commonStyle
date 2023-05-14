@@ -1,44 +1,63 @@
 //通用样式  
 
 
+$unit:'px';//单位
 
-$top:'t';
-$bottom:'b';
-$left:'l';
-$right:'r';
-$x:'x';
-$y:'y';
-
+$box-key:(
+  m:"margin",
+  p:"padding",
+  b:"border",
+);
+$box-value:(
+  t:"top",
+  b:"bottom",
+  l:"left",
+  r:"right",
+  x:("left","right"),
+  y:("top","bottom"),
+);
 // box
-@for $i from 1 through 100{
-  .m#{$top}-#{$i}{ margin-top: $i+px; }  
-  .p#{$top}-#{$i}{padding-top: $i+px; }
-  .b#{$top}-#{$i}{border-top: $i+px; }
-  .m#{$bottom}-#{$i}{ margin-bottom:  $i+px }  
-  .p#{$bottom}-#{$i}{ margin-bottom: $i+px; }  
-  .b#{$bottom}-#{$i}{border-bottom: $i+px; }
-  .m#{$left}-#{$i}{ margin-left:$i+px; }  
-  .p#{$left}-#{$i}{ margin-left: $i+px; } 
-  .b#{$left}-#{$i}{border-left: $i+px; }
-  .m#{$right}-#{$i}{ margin-right: $i+px; }  
-  .p#{$right}-#{$i}{ margin-right: $i+px; }  
-  .b#{$right}-#{$i}{border-right: $i+px; }
-  .m#{$x}-#{$i}{margin-right: $i + px;margin-left: $i + px;}
-  .m#{$y}-#{$i}{margin-top: $i + px;margin-bottom: $i + px;}
-  .m-#{$i}{margin: $i + px;}
-  .P#{$x}-#{$i}{padding-right: $i + px;padding-left: $i + px;}
-  .P#{$y}-#{$i}{padding-top: $i + px;padding-bottom: $i + px;}
-  .P-#{$i}{padding: $i + px;}
-  .b#{$x}-#{$i}{border-right: $i + px;border-left: $i + px;}
-  .b#{$y}-#{$i}{border-top: $i + px;border-bottom: $i + px;}
-  .b-#{$i}{border: $i + px;}
-  .opacity-#{ $i }{opacity: $i / 100;}
+@for $i from 0 through 100{
+  @each $kk, $kv in $box-key{
+    @each $vk,$vv in $box-value{
+      @if $kk ==b{
+        @if $i % 10 ==0{
+          $ri:$i/10;
+          .#{$kk}#{$vk}-#{$ri}{
+          @if $vk==y or $vk==x{
+            @each $v in $vv{
+              #{$kv}-#{$v}: $ri+#{$unit};
+            }
+          }@else {
+            #{$kv}-#{$vv}: $ri+#{$unit};
+          }
+        }
+      }
+      }@else {
+        .#{$kk}#{$vk}-#{$i}{
+          @if $vk==y or $vk==x{
+            @each $v in $vv{
+              #{$kv}-#{$v}: $i+#{$unit};
+            }
+          }@else{
+            #{$kv}-#{$vv}: $i+#{$unit};
+          }
+        }
+      }
+    }
+  }
+  @if $i%10==0{
+    .opacity-#{$i/10}{opacity: $i / 100;}
+    .radius-#{$i/10}{border-radius: $i/10 + #{$unit};}
+    }
 }
-
+.circle{#{$border}-radius: 50%;}
+.border-box{box-sizing: border-box;}
+.content-box{box-sizing: content-box;}
 
 //flex
 .flex{display: flex;}
-.flex-i{flex: 1;}
+.flex-1{flex: 1;}
 .flex-cloumn{flex-direction: column;}
 .flex-warp{flex-wrap: wrap;}
 .flex-nowarp{flex-wrap: nowrap;}
@@ -51,14 +70,18 @@ $y:'y';
 .it-start{align-items: flex-start;}
 .it-end{align-items: flex-end;}
 .it-center{align-items: center;}
+
 .box-center{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
 //hight-width
+@for $i from 1 through 200{
+  .h-#{$i}{height: $i + #{$unit};}
+  .w-#{$i}{width: $i + #{$unit};}
+}
 .h-full{height: 100%;}
 .h-1p2{height:50%;}
 .h-1p3{height:33.3% ;}
@@ -82,15 +105,13 @@ $y:'y';
   white-space:nowrap ;
 }
 @for $i from 12 through 50{
-  .t-size{font-size: $i + px;}
+  .ts-#{$i}{font-size: $i + #{$unit};}
 }
 @each $i in 400,450,500,550,600,650,700,750,800,850,900{
-  .t-weight{font-weight: $i;}
+  .tw-#{$i}{font-weight: $i;}
 }
 .t-bold{font-weight: bold;}
 .t-center{text-align: center;}
-
-
 
 //overflow
 .x-hidden{overflow-x: hidden;}
@@ -103,7 +124,6 @@ $y:'y';
 .y-scroll{overflow-y: scroll;}
 .over-scroll{overflow: scroll;}
 
-
 //cursor
 .pointer{cursor: pointer;}
 .no-pointer{cursor: not-allowed;}
@@ -113,14 +133,11 @@ $y:'y';
 .move{cursor: move;}
 .text{cursor: text;}
 
-
 //position
 .absolute{position: absolute;}
 .fixed{position: fixed;}
 .relative {position: relative;}
 .sticky {position: sticky;}
-
-
 
 //display
 .block{display: block;}
@@ -130,21 +147,21 @@ $y:'y';
 .show-display{visibility: visible;}
 .none-display{display: none;}
 
-
 //float
 .float-l{float: left;}
 .float-r{float: right;}
 .float-none{float: none;}
+
 //clear
 .clear-l{clear: left;}
 .clear-r{clear: right;}
 .clear-both{clear: both;}
 
 
-
-
-
-//width  hight
-
-//text-center
-//box-center
+//system-color
+$system-color:(white)(black)(red)(green)(blue)(yellow)(orange)(gray)(pink)(purple)(brown)(transparent);
+@each $i in $system-color{
+  .bg-#{$i}{background-color: $i;}
+  .color-#{$i}{color: $i;}
+  .border-#{$i}{border-color: $i;}
+}
