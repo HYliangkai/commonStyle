@@ -1,0 +1,305 @@
+//通用样式
+
+//单位
+$unit: 'px';
+
+$box-key: (
+  m: 'margin',
+  p: 'padding',
+  b: 'border',
+);
+$box-value: (
+  t: 'top',
+  b: 'bottom',
+  l: 'left',
+  r: 'right',
+  x: (
+    'left',
+    'right',
+  ),
+  y: (
+    'top',
+    'bottom',
+  ),
+);
+// box
+@for $i from 0 through 100 {
+  @each $kk, $kv in $box-key {
+    @each $vk, $vv in $box-value {
+      @if $kk ==b {
+        @if $i % 10 ==0 {
+          $ri: calc($i / 10);
+          .#{$kk}#{$vk}-#{$ri} {
+            @if $vk==y or $vk==x {
+              @each $v in $vv {
+                #{$kv}-#{$v}: $ri +#{$unit};
+              }
+            } @else {
+              #{$kv}-#{$vv}: $ri +#{$unit};
+            }
+          }
+        }
+      } @else {
+        .#{$kk}#{$vk}-#{$i} {
+          @if $vk==y or $vk==x {
+            @each $v in $vv {
+              #{$kv}-#{$v}: $i +#{$unit};
+            }
+          } @else {
+            #{$kv}-#{$vv}: $i +#{$unit};
+          }
+        }
+      }
+    }
+  }
+  @if $i%10==0 {
+    $ri: calc($i / 10);
+    .opacity-#{$ri} {
+      opacity: calc(#{$i}/ 100);
+    }
+    .radius-#{$ri} {
+      border-radius: calc(#{$i}/ 10) + #{$unit};
+    }
+  }
+}
+.circle {
+  border-radius: 50%;
+}
+.border-box {
+  box-sizing: border-box;
+}
+.content-box {
+  box-sizing: content-box;
+}
+
+//flex
+.flex {
+  display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-cloumn {
+  flex-direction: column;
+}
+.flex-warp {
+  flex-wrap: wrap;
+}
+.flex-nowarp {
+  flex-wrap: nowrap;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+.jt-start {
+  justify-content: flex-start;
+}
+.jt-end {
+  justify-content: flex-end;
+}
+.jt-center {
+  justify-content: center;
+}
+.jt-between {
+  justify-content: space-between;
+}
+.jt-around {
+  justify-content: space-around;
+}
+.it-start {
+  align-items: flex-start;
+}
+.it-end {
+  align-items: flex-end;
+}
+.it-center {
+  align-items: center;
+}
+
+.box-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.margrin-center {
+  margin: 0 auto;
+}
+
+//hight-width
+@for $i from 1 through 200 {
+  .h-#{$i} {
+    height: $i + #{$unit};
+  }
+  .w-#{$i} {
+    width: $i + #{$unit};
+  }
+}
+@for $i from 1 through 100 {
+  .h-#{$i}vh {
+    height: $i + vh;
+  }
+  .h-#{$i}pre {
+    height: 1% * $i;
+  }
+  .w-#{$i}vw {
+    width: $i + vw;
+  }
+  .w-#{$i}pre {
+    width: 1% * $i;
+  }
+}
+.h-full {
+  height: 100%;
+}
+.w-full {
+  width: 100%;
+}
+
+//text-font
+.t-wrap {
+  word-wrap: break-word;
+}
+.t-nowrap {
+  white-space: nowrap;
+}
+.t-ellipsis {
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+@for $i from 12 through 50 {
+  .ts-#{$i} {
+    font-size: $i + #{$unit};
+  }
+}
+@each $i in 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900 {
+  .tw-#{$i} {
+    font-weight: $i;
+  }
+}
+.t-bold {
+  font-weight: bold;
+}
+.t-center {
+  text-align: center;
+}
+
+//overflow
+.x-hidden {
+  overflow-x: hidden;
+}
+.y-hidden {
+  overflow-y: hidden;
+}
+.over-hidden {
+  overflow: hidden;
+}
+.x-auto {
+  overflow-x: auto;
+}
+.y-auto {
+  overflow-y: auto;
+}
+.over-auto {
+  overflow: auto;
+}
+.x-scroll {
+  overflow-x: scroll;
+}
+.y-scroll {
+  overflow-y: scroll;
+}
+.over-scroll {
+  overflow: scroll;
+}
+
+//cursor
+.pointer {
+  cursor: pointer;
+}
+.no-pointer {
+  cursor: not-allowed;
+}
+.wait {
+  cursor: wait;
+}
+.help {
+  cursor: help;
+}
+.default {
+  cursor: default;
+}
+.move {
+  cursor: move;
+}
+.text {
+  cursor: text;
+}
+
+//position
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.relative {
+  position: relative;
+}
+.sticky {
+  position: sticky;
+}
+
+//display
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline {
+  display: inline;
+}
+.hidden-display {
+  visibility: hidden;
+}
+.show-display {
+  visibility: visible;
+}
+.none-display {
+  display: none;
+}
+
+//float
+.float-l {
+  float: left;
+}
+.float-r {
+  float: right;
+}
+.float-none {
+  float: none;
+}
+
+//clear
+.clear-l {
+  clear: left;
+}
+.clear-r {
+  clear: right;
+}
+.clear-both {
+  clear: both;
+}
+
+//system-color
+$system-color: ('white') ('black') ('red') ('green') ('blue') ('yellow') ('orange') ('gray')
+  ('pink') ('purple') ('brown') ('transparent');
+@each $i in $system-color {
+  .bg-#{$i} {
+    background-color: #{$i};
+  }
+  .color-#{$i} {
+    color: #{$i};
+  }
+}
