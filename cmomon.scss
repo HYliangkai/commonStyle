@@ -32,10 +32,10 @@ $box-value: (
           .#{$kk}#{$vk}-#{$ri} {
             @if $vk==y or $vk==x {
               @each $v in $vv {
-                #{$kv}-#{$v}: $ri +#{$unit};
+                #{$kv}-#{$v}: $ri + #{$unit};
               }
             } @else {
-              #{$kv}-#{$vv}: $ri +#{$unit};
+              #{$kv}-#{$vv}: $ri + #{$unit};
             }
           }
         }
@@ -43,14 +43,22 @@ $box-value: (
         .#{$kk}#{$vk}-#{$i} {
           @if $vk==y or $vk==x {
             @each $v in $vv {
-              #{$kv}-#{$v}: $i +#{$unit};
+              #{$kv}-#{$v}: $i + #{$unit};
             }
           } @else {
-            #{$kv}-#{$vv}: $i +#{$unit};
+            #{$kv}-#{$vv}: $i + #{$unit};
           }
         }
       }
     }
+    @if $kk!=b {
+      .#{$kk}-#{$i} {
+        #{$kv}: $i + #{$unit};
+      }
+    }
+  }
+  .radius-#{$i}-per {
+    border-radius: percentage($i/100);
   }
   @if $i%10==0 {
     $ri: calc($i / 10);
@@ -62,6 +70,20 @@ $box-value: (
     }
   }
 }
+@for $i from -30 through -1 {
+  @each $k, $v in $box-value {
+    .m#{$k}-#{$i} {
+      @if $k==y or $k==x {
+        @each $vv in $v {
+          margin-#{$vv}: $i + #{$unit};
+        }
+      } @else {
+        margin-#{$v}: $i + #{$unit};
+      }
+    }
+  }
+}
+
 .circle {
   border-radius: 50%;
 }
@@ -78,6 +100,11 @@ $box-value: (
 }
 .flex-1 {
   flex: 1;
+}
+@for $i from 2 through 24 {
+  .flex-#{$i} {
+    flex: $i;
+  }
 }
 .flex-cloumn {
   flex-direction: column;
@@ -116,12 +143,25 @@ $box-value: (
   align-items: center;
 }
 
+//行排列,中线居中
+.row-center {
+  display: flex;
+  align-items: center;
+}
+//列排列,中线居中
+.col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+//flex版本的居中
 .box-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.margrin-center {
+//margin版本的居中
+.margin-center {
   margin: 0 auto;
 }
 
@@ -181,6 +221,7 @@ $box-value: (
   font-weight: bold;
 }
 .t-center {
+  vertical-align: middle;
   text-align: center;
 }
 
@@ -191,7 +232,7 @@ $box-value: (
 .y-hidden {
   overflow-y: hidden;
 }
-.over-hidden {
+.xy-hidden {
   overflow: hidden;
 }
 .x-auto {
@@ -200,7 +241,7 @@ $box-value: (
 .y-auto {
   overflow-y: auto;
 }
-.over-auto {
+.xy-auto {
   overflow: auto;
 }
 .x-scroll {
@@ -209,7 +250,7 @@ $box-value: (
 .y-scroll {
   overflow-y: scroll;
 }
-.over-scroll {
+.xy-scroll {
   overflow: scroll;
 }
 
