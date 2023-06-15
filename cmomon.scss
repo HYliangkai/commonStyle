@@ -22,20 +22,20 @@ $box-value: (
     'bottom',
   ),
 );
-// box
+/** @box */
 @for $i from 0 through 100 {
   @each $kk, $kv in $box-key {
     @each $vk, $vv in $box-value {
       @if $kk ==b {
         @if $i % 10 ==0 {
-          $ri: calc($i / 10);
+          $ri: $i / 10;
           .#{$kk}#{$vk}-#{$ri} {
             @if $vk==y or $vk==x {
               @each $v in $vv {
-                #{$kv}-#{$v}: $ri + #{$unit};
+                #{$kv}-#{$v}: $ri * 1#{$unit};
               }
             } @else {
-              #{$kv}-#{$vv}: $ri + #{$unit};
+              #{$kv}-#{$vv}: $ri * 1#{$unit};
             }
           }
         }
@@ -43,17 +43,17 @@ $box-value: (
         .#{$kk}#{$vk}-#{$i} {
           @if $vk==y or $vk==x {
             @each $v in $vv {
-              #{$kv}-#{$v}: $i + #{$unit};
+              #{$kv}-#{$v}: $i * 1#{$unit};
             }
           } @else {
-            #{$kv}-#{$vv}: $i + #{$unit};
+            #{$kv}-#{$vv}: $i * 1#{$unit};
           }
         }
       }
     }
     @if $kk!=b {
       .#{$kk}-#{$i} {
-        #{$kv}: $i + #{$unit};
+        #{$kv}: $i * 1#{$unit};
       }
     }
   }
@@ -61,12 +61,12 @@ $box-value: (
     border-radius: percentage($i/100);
   }
   @if $i%10==0 {
-    $ri: calc($i / 10);
+    $ri: $i / 10;
     .opacity-#{$ri} {
       opacity: calc(#{$i}/ 100);
     }
     .radius-#{$ri} {
-      border-radius: calc(#{$i}/ 10) + #{$unit};
+      border-radius: #{$i}/ 10 * 1#{$unit};
     }
   }
 }
@@ -75,10 +75,10 @@ $box-value: (
     .m#{$k}-#{$i} {
       @if $k==y or $k==x {
         @each $vv in $v {
-          margin-#{$vv}: $i + #{$unit};
+          margin-#{$vv}: $i * 1#{$unit};
         }
       } @else {
-        margin-#{$v}: $i + #{$unit};
+        margin-#{$v}: $i * 1#{$unit};
       }
     }
   }
@@ -94,7 +94,7 @@ $box-value: (
   box-sizing: content-box;
 }
 
-//flex
+/** @flex */
 .flex {
   display: flex;
 }
@@ -143,24 +143,24 @@ $box-value: (
   align-items: center;
 }
 
-//行排列,中线居中
+//行排列,行中线居中
 .row-center {
   display: flex;
   align-items: center;
 }
-//列排列,中线居中
+//列排列,列中线居中
 .col-center {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-//flex版本的居中
+//全部居中
 .box-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-//margin版本的居中
+//margin居中
 .margin-center {
   margin: 0 auto;
 }
@@ -168,21 +168,21 @@ $box-value: (
 //hight-width
 @for $i from 1 through 200 {
   .h-#{$i} {
-    height: $i + #{$unit};
+    height: $i * 1#{$unit};
   }
   .w-#{$i} {
-    width: $i + #{$unit};
+    width: $i * 1#{$unit};
   }
 }
 @for $i from 1 through 100 {
   .h-#{$i}vh {
-    height: $i + vh;
+    height: $i * 1vh;
   }
   .h-#{$i}pre {
     height: 1% * $i;
   }
   .w-#{$i}vw {
-    width: $i + vw;
+    width: $i * 1vw;
   }
   .w-#{$i}pre {
     width: 1% * $i;
@@ -195,7 +195,7 @@ $box-value: (
   width: 100%;
 }
 
-//text-font
+/** @text */
 .t-wrap {
   word-wrap: break-word;
 }
@@ -209,7 +209,7 @@ $box-value: (
 }
 @for $i from 12 through 50 {
   .ts-#{$i} {
-    font-size: $i + #{$unit};
+    font-size: $i * 1#{$unit};
   }
 }
 @each $i in 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900 {
@@ -225,7 +225,7 @@ $box-value: (
   text-align: center;
 }
 
-//overflow
+/** @overflow */
 .x-hidden {
   overflow-x: hidden;
 }
@@ -254,7 +254,7 @@ $box-value: (
   overflow: scroll;
 }
 
-//cursor
+/** cursor */
 .pointer {
   cursor: pointer;
 }
@@ -277,7 +277,7 @@ $box-value: (
   cursor: text;
 }
 
-//position
+/** position */
 .absolute {
   position: absolute;
 }
@@ -291,7 +291,7 @@ $box-value: (
   position: sticky;
 }
 
-//display
+/** display */
 .block {
   display: block;
 }
@@ -311,7 +311,7 @@ $box-value: (
   display: none;
 }
 
-//float
+/** float */
 .float-l {
   float: left;
 }
@@ -322,7 +322,7 @@ $box-value: (
   float: none;
 }
 
-//clear
+/** clear */
 .clear-l {
   clear: left;
 }
@@ -333,7 +333,7 @@ $box-value: (
   clear: both;
 }
 
-//system-color
+/** system-color */
 $system-color: ('white') ('black') ('red') ('green') ('blue') ('yellow') ('orange') ('gray')
   ('pink') ('purple') ('brown') ('transparent');
 @each $i in $system-color {
