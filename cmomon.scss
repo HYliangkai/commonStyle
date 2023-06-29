@@ -334,13 +334,75 @@ $box-value: (
 }
 
 /** system-color */
-$system-color: ('white') ('black') ('red') ('green') ('blue') ('yellow') ('orange') ('gray')
-  ('pink') ('purple') ('brown') ('transparent');
-@each $i in $system-color {
-  .bg-#{$i} {
-    background-color: #{$i};
-  }
-  .color-#{$i} {
-    color: #{$i};
-  }
+.bg-white {
+  background-color: white;
+}
+.color-white {
+  color: white;
+}
+.bg-black {
+  background-color: black;
+}
+.color-black {
+  color: black;
+}
+.bg-red {
+  background-color: red;
+}
+.color-red {
+  color: red;
+}
+.bg-green {
+  background-color: green;
+}
+.color-green {
+  color: green;
+}
+.bg-blue {
+  background-color: blue;
+}
+.color-blue {
+  color: blue;
+}
+.bg-yellow {
+  background-color: yellow;
+}
+.color-yellow {
+  color: yellow;
+}
+.bg-orange {
+  background-color: orange;
+}
+.color-orange {
+  color: orange;
+}
+.bg-gray {
+  background-color: gray;
+}
+.color-gray {
+  color: gray;
+}
+.bg-pink {
+  background-color: pink;
+}
+.color-pink {
+  color: pink;
+}
+.bg-purple {
+  background-color: purple;
+}
+.color-purple {
+  color: purple;
+}
+.bg-brown {
+  background-color: brown;
+}
+.color-brown {
+  color: brown;
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.color-transparent {
+  color: transparent;
 }
