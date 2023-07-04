@@ -23,70 +23,98 @@ $box-value: (
   ),
 );
 /** @box */
-@for $i from 0 through 100 {
-  @each $kk, $kv in $box-key {
-    @each $vk, $vv in $box-value {
-      @if $kk ==b {
-        @if $i % 10 ==0 {
-          $ri: $i / 10;
-          .#{$kk}#{$vk}-#{$ri} {
-            @if $vk==y or $vk==x {
-              @each $v in $vv {
-                #{$kv}-#{$v}: $ri * 1#{$unit};
-              }
-            } @else {
-              #{$kv}-#{$vv}: $ri * 1#{$unit};
-            }
-          }
-        }
-      } @else {
-        .#{$kk}#{$vk}-#{$i} {
-          @if $vk==y or $vk==x {
-            @each $v in $vv {
-              #{$kv}-#{$v}: $i * 1#{$unit};
-            }
-          } @else {
-            #{$kv}-#{$vv}: $i * 1#{$unit};
-          }
-        }
-      }
-    }
-    @if $kk!=b {
-      .#{$kk}-#{$i} {
-        #{$kv}: $i * 1#{$unit};
-      }
-    }
+@for $i from 1 through 100 {
+  .m-#{$i} {
+    margin: $i #{$unit};
   }
-  .radius-#{$i}-per {
-    border-radius: percentage($i/100);
+  .mx-#{$i} {
+    margin-left: $i #{$unit};
+    margin-right: $i #{$unit};
   }
-  @if $i%10==0 {
-    $ri: $i / 10;
-    .opacity-#{$ri} {
-      opacity: calc(#{$i}/ 100);
-    }
-    .radius-#{$ri} {
-      border-radius: #{$i}/ 10 * 1#{$unit};
-    }
+  .my-#{$i} {
+    margin-top: $i #{$unit};
+    margin-bottom: $i #{$unit};
   }
-}
-@for $i from -30 through -1 {
-  @each $k, $v in $box-value {
-    .m#{$k}-#{$i} {
-      @if $k==y or $k==x {
-        @each $vv in $v {
-          margin-#{$vv}: $i * 1#{$unit};
-        }
-      } @else {
-        margin-#{$v}: $i * 1#{$unit};
-      }
-    }
+  .mt-#{$i} {
+    margin-top: $i #{$unit};
+  }
+  .mb-#{$i} {
+    margin-bottom: $i #{$unit};
+  }
+  .ml-#{$i} {
+    margin-left: $i #{$unit};
+  }
+  .mr-#{$i} {
+    margin-right: $i #{$unit};
+  }
+  .p {
+    padding: $i #{$unit};
+  }
+  .px-#{$i} {
+    padding-left: $i #{$unit};
+    padding-right: $i #{$unit};
+  }
+  .py-#{$i} {
+    padding-top: $i #{$unit};
+    padding-bottom: $i #{$unit};
+  }
+  .pt-#{$i} {
+    padding-top: $i #{$unit};
+  }
+  .pb-#{$i} {
+    padding-bottom: $i #{$unit};
+  }
+  .pl-#{$i} {
+    padding-left: $i #{$unit};
+  }
+  .pr-#{$i} {
+    padding-right: $i #{$unit};
   }
 }
 
+/** @负的margin */
+@for $i from 1 through 30 {
+  $val: -$i;
+  .nm-#{$i} {
+    margin: $val #{$unit};
+  }
+  .nmt-#{$i} {
+    margin-top: $val #{$unit};
+  }
+  .nmb-#{$i} {
+    margin-bottom: $val #{$unit};
+  }
+  .nml-#{$i} {
+    margin-left: $val #{$unit};
+  }
+  .nmr-#{$i} {
+    margin-right: $val #{$unit};
+  }
+}
+
+/** @border-radius */
+@for $i from 1 through 100 {
+  .radius-#{$i}-per {
+    border-radius: calc($i / 100);
+  }
+}
+@for $i from 1 through 10 {
+  .radius-#{$i} {
+    border-radius: calc($i / 10) * 1 #{$unit};
+  }
+}
 .circle {
   border-radius: 50%;
 }
+
+/** @opacity */
+@for $i from 1 through 10 {
+  .opacity-#{$i} {
+    opacity: calc($i / 10);
+  }
+}
+
+/** @box-sizing */
 .border-box {
   box-sizing: border-box;
 }
@@ -143,18 +171,18 @@ $box-value: (
   align-items: center;
 }
 
-//行排列,行中线居中
+//行中线居中
 .row-center {
   display: flex;
   align-items: center;
 }
-//列排列,列中线居中
+//列中线居中
 .col-center {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-//全部居中
+//flex居中
 .box-center {
   display: flex;
   align-items: center;
@@ -165,7 +193,7 @@ $box-value: (
   margin: 0 auto;
 }
 
-//hight-width
+/** @hight-width */
 @for $i from 1 through 200 {
   .h-#{$i} {
     height: $i * 1#{$unit};
@@ -254,7 +282,7 @@ $box-value: (
   overflow: scroll;
 }
 
-/** cursor */
+/** @cursor */
 .pointer {
   cursor: pointer;
 }
@@ -277,7 +305,7 @@ $box-value: (
   cursor: text;
 }
 
-/** position */
+/** @position */
 .absolute {
   position: absolute;
 }
@@ -291,7 +319,7 @@ $box-value: (
   position: sticky;
 }
 
-/** display */
+/** @display */
 .block {
   display: block;
 }
@@ -311,7 +339,7 @@ $box-value: (
   display: none;
 }
 
-/** float */
+/** @float */
 .float-l {
   float: left;
 }
@@ -322,7 +350,7 @@ $box-value: (
   float: none;
 }
 
-/** clear */
+/** @clear */
 .clear-l {
   clear: left;
 }
@@ -333,7 +361,7 @@ $box-value: (
   clear: both;
 }
 
-/** system-color */
+/** @system-color */
 .bg-white {
   background-color: white;
 }
