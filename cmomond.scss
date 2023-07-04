@@ -76,12 +76,12 @@ $unit: rpx;
 /** @border-radius */
 @for $i from 1 through 100 {
   .radius-#{$i}per {
-    border-radius: percentage(calc($i / 100));
+    border-radius: calc($i / 100);
   }
 }
 @for $i from 1 through 10 {
   .radius-#{$i} {
-    border-radius: calc($i / 10) +#{$unit};
+    border-radius: calc($i / 10) (+#{$unit});
   }
 }
 .circle {
