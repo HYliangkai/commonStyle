@@ -1,74 +1,55 @@
 //通用样式
 
 //单位
-$unit: 'px';
+$unit: rpx;
 
-$box-key: (
-  m: 'margin',
-  p: 'padding',
-  b: 'border',
-);
-$box-value: (
-  t: 'top',
-  b: 'bottom',
-  l: 'left',
-  r: 'right',
-  x: (
-    'left',
-    'right',
-  ),
-  y: (
-    'top',
-    'bottom',
-  ),
-);
 /** @box */
 @for $i from 1 through 100 {
   .m-#{$i} {
-    margin: $i #{$unit};
+    margin: #{$i}+#{$unit};
   }
   .mx-#{$i} {
-    margin-left: $i #{$unit};
-    margin-right: $i #{$unit};
+    margin-left: #{$i}+#{$unit};
+    margin-right: #{$i}+#{$unit};
   }
   .my-#{$i} {
-    margin-top: $i #{$unit};
-    margin-bottom: $i #{$unit};
+    margin-top: #{$i}+#{$unit};
+    margin-bottom: #{$i}+#{$unit};
   }
   .mt-#{$i} {
-    margin-top: $i #{$unit};
+    margin-top: #{$i}+#{$unit};
   }
   .mb-#{$i} {
-    margin-bottom: $i #{$unit};
+    margin-bottom: #{$i}+#{$unit};
   }
   .ml-#{$i} {
-    margin-left: $i #{$unit};
+    margin-left: #{$i}+#{$unit};
   }
   .mr-#{$i} {
-    margin-right: $i #{$unit};
+    margin-right: #{$i}+#{$unit};
   }
   .p {
-    padding: $i #{$unit};
+    padding: #{$i}+#{$unit};
   }
   .px-#{$i} {
-    padding-left: $i #{$unit};
-    padding-right: $i #{$unit};
+    padding-left: #{$i}+#{$unit};
+    padding-right: #{$i}+#{$unit};
   }
   .py-#{$i} {
-    padding-top: $i #{$unit};
-    padding-bottom: $i #{$unit};
+    padding-top: #{$i}+#{$unit};
+    padding-bottom: #{$i}+#{$unit};
   }
   .pt-#{$i} {
-    padding-top: $i #{$unit};
+    padding-top: #{$i}+#{$unit};
   }
   .pb-#{$i} {
-    padding-bottom: $i #{$unit};
+    padding-bottom: #{$i}+#{$unit};
   }
   .pl-#{$i} {
-    padding-left: $i #{$unit};
+    padding-left: #{$i}+#{$unit};
   }
   .pr-#{$i} {
-    padding-right: $i #{$unit};
+    padding-right: #{$i}+#{$unit};
   }
 }
 
@@ -76,31 +57,31 @@ $box-value: (
 @for $i from 1 through 30 {
   $val: -$i;
   .nm-#{$i} {
-    margin: $val #{$unit};
+    margin: #{$val}+#{$unit};
   }
   .nmt-#{$i} {
-    margin-top: $val #{$unit};
+    margin-top: #{$val}+#{$unit};
   }
   .nmb-#{$i} {
-    margin-bottom: $val #{$unit};
+    margin-bottom: #{$val}+#{$unit};
   }
   .nml-#{$i} {
-    margin-left: $val #{$unit};
+    margin-left: #{$val}+#{$unit};
   }
   .nmr-#{$i} {
-    margin-right: $val #{$unit};
+    margin-right: #{$val}+#{$unit};
   }
 }
 
 /** @border-radius */
 @for $i from 1 through 100 {
-  .radius-#{$i}-per {
-    border-radius: calc($i / 100);
+  .radius-#{$i}per {
+    border-radius: percentage(calc($i / 100));
   }
 }
 @for $i from 1 through 10 {
   .radius-#{$i} {
-    border-radius: calc($i / 10) * 1 #{$unit};
+    border-radius: calc($i / 10) +#{$unit};
   }
 }
 .circle {
@@ -110,7 +91,7 @@ $box-value: (
 /** @opacity */
 @for $i from 1 through 10 {
   .opacity-#{$i} {
-    opacity: calc($i / 10);
+    opacity: $i / 10;
   }
 }
 
@@ -196,23 +177,23 @@ $box-value: (
 /** @hight-width */
 @for $i from 1 through 200 {
   .h-#{$i} {
-    height: $i * 1#{$unit};
+    height: #{$i}+#{$unit};
   }
   .w-#{$i} {
-    width: $i * 1#{$unit};
+    width: #{$i}+#{$unit};
   }
 }
 @for $i from 1 through 100 {
   .h-#{$i}vh {
     height: $i * 1vh;
   }
-  .h-#{$i}pre {
+  .h-#{$i}per {
     height: 1% * $i;
   }
   .w-#{$i}vw {
     width: $i * 1vw;
   }
-  .w-#{$i}pre {
+  .w-#{$i}per {
     width: 1% * $i;
   }
 }
@@ -237,7 +218,7 @@ $box-value: (
 }
 @for $i from 12 through 50 {
   .ts-#{$i} {
-    font-size: $i * 1#{$unit};
+    font-size: #{$i}+#{$unit};
   }
 }
 @each $i in 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900 {
