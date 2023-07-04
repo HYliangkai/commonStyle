@@ -1,6 +1,6 @@
 # commonStyle -- Chzky
 * 通用的样式表,使用Scss进行预处理  
-* 通过改变 common.scss中的`$unit`来改变单位
+* 通过改变`common.scss`中的`$unit`来改变单位
 
 ## 注意⚠️
 + 小程序不需要引入 reset.scss --> html的某些标签在小程序中没有
