@@ -157,6 +157,12 @@ $unit: rpx;
   display: flex;
   align-items: center;
 }
+//后居中
+.row-end {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
 //列中线居中
 .col-center {
   display: flex;
@@ -352,7 +358,6 @@ $unit: rpx;
 .us-all {
   user-select: all;
 }
-
 
 /** @system-color */
 .bg-white {
