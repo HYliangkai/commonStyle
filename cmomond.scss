@@ -342,6 +342,18 @@ $unit: rpx;
   clear: both;
 }
 
+/** @user-select */
+.us-none {
+  user-select: none;
+}
+.us-text {
+  user-select: text;
+}
+.us-all {
+  user-select: all;
+}
+
+
 /** @system-color */
 .bg-white {
   background-color: white;
