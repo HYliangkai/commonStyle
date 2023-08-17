@@ -1,7 +1,7 @@
 //通用样式
 
 //单位
-$unit: rpx;
+$unit: px;
 
 /** @box */
 @for $i from 1 through 100 {
@@ -28,7 +28,7 @@ $unit: rpx;
   .mr-#{$i} {
     margin-right: #{$i}+#{$unit};
   }
-  .p {
+  .p-#{$i} {
     padding: #{$i}+#{$unit};
   }
   .px-#{$i} {
@@ -91,7 +91,7 @@ $unit: rpx;
 /** @opacity */
 @for $i from 1 through 10 {
   .opacity-#{$i} {
-    opacity: $i / 10;
+    opacity: calc($i / 10);
   }
 }
 
@@ -304,6 +304,17 @@ $unit: rpx;
 }
 .sticky {
   position: sticky;
+}
+
+/** @z-index */
+@for $i from 0 through 10 {
+  .z-index-#{$i} {
+    @if $i == 10 {
+      z-index: 2147483647;
+    } @else {
+      z-index: #{$i};
+    }
+  }
 }
 
 /** @display */
