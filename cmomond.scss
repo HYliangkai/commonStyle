@@ -76,7 +76,7 @@ $unit: px;
 /** @border-width */
 @for $i from 1 through 10 {
   .border-#{$i} {
-    border-width: $i +#{$unit};
+    border-width: #{$i}+#{$unit};
   }
 }
 
