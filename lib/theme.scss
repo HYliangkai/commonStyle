@@ -1,11 +1,11 @@
 //主题 , 可根据现有项目自定义
 
-$primary: #5a822e;
-$success: #eaffd0;
-$warning: #fce38a;
-$danger: #f38181;
-$info: #c8c9cc;
-$page: #f2f3f5;
+$primary: #409eff !default;
+$success: #67c23a !default;
+$warning: #e6a23c !default;
+$danger: #f56c6c !default;
+$info: #909399 !default;
+$page: #f2f3f5 !default;
 
 /** @color */
 .bg-primary {
@@ -28,11 +28,12 @@ $page: #f2f3f5;
 }
 
 /** @text-color */
-$primary-t: #303133;
-$regular: #606266;
-$secondary: #909399;
-$placeholder: #a8abb2;
-$disabled: #c0c4cc;
+$primary-t: #303133 !default;
+$regular: #606266 !default;
+$secondary: #909399 !default;
+$placeholder: #a8abb2 !default;
+$disabled: #c0c4cc !default;
+
 .color-primary {
   color: $primary;
 }
@@ -50,12 +51,13 @@ $disabled: #c0c4cc;
 }
 
 /** @border */
-$darker: #cdd0d6;
-$dark: #d4d7de;
-$base: #dcdfe6;
-$light: #e4e7ed;
-$lighter: #ebeef5;
-$extra-light: #f2f6fc;
+$darker: #cdd0d6 !default;
+$dark: #d4d7de !default;
+$base: #dcdfe6 !default;
+$light: #e4e7ed !default;
+$lighter: #ebeef5 !default;
+$extra-light: #f2f6fc !default;
+
 .border-darker {
   border-color: $darker;
 }
@@ -87,11 +89,12 @@ $extra-light: #f2f6fc;
 }
 
 /** @shadow */
-$basic-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08);
-$light-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
-$lighter-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12);
+$basic-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08) !default;
+$light-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12) !default;
+$lighter-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12) !default;
 $dark-shadow: 0px 16px 48px 16px rgba(0, 0, 0, 0.08), 0px 12px 32px rgba(0, 0, 0, 0.12),
-  0px 8px 16px -8px rgba(0, 0, 0, 0.16);
+  0px 8px 16px -8px rgba(0, 0, 0, 0.16) !default;
+
 .basic-shadow {
   box-shadow: $basic-shadow;
 }

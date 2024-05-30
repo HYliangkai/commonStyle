@@ -1,7 +1,5 @@
-//通用样式
-
 //单位
-$unit: px;
+$unit: px !default;
 
 /** @box */
 @for $i from 1 through 100 {
@@ -73,42 +71,6 @@ $unit: px;
   }
 }
 
-/** @border-width */
-@for $i from 1 through 10 {
-  .border-#{$i} {
-    border-width: #{$i}+#{$unit};
-  }
-}
-
-/** @border-style */
-.border-solid {
-  border-style: solid;
-}
-.border-dashed {
-  border-style: dashed;
-}
-.border-dotted {
-  border-style: dotted;
-}
-.border-double {
-  border-style: double;
-}
-.border-groove {
-  border-style: groove;
-}
-.border-ridge {
-  border-style: ridge;
-}
-.border-inset {
-  border-style: inset;
-}
-.border-outset {
-  border-style: outset;
-}
-.border-none {
-  border-style: none;
-}
-
 /** @border-radius */
 @for $i from 1 through 100 {
   .radius-#{$i}per {
@@ -117,17 +79,42 @@ $unit: px;
 }
 @for $i from 1 through 10 {
   .radius-#{$i} {
-    border-radius: calc($i / 10) (+#{$unit});
+    border-radius: $i + #{$unit};
   }
 }
 .circle {
   border-radius: 50%;
 }
 
+/** @border */
+@for $i from 1 through 10 {
+  .border-#{$i} {
+    border: $i + #{$unit} solid;
+  }
+  .border-top-#{$i} {
+    border-top: $i + #{$unit} solid;
+  }
+  .border-bottom-#{$i} {
+    border-bottom: $i + #{$unit} solid;
+  }
+  .border-left-#{$i} {
+    border-left: $i + #{$unit} solid;
+  }
+  .border-right-#{$i} {
+    border-right: $i + #{$unit} solid;
+  }
+}
+
 /** @opacity */
 @for $i from 1 through 10 {
   .opacity-#{$i} {
     opacity: calc($i / 10);
+  }
+}
+/** @scale */
+@for $i from 1 through 10 {
+  .scale-#{$i} {
+    scale: calc($i / 10);
   }
 }
 
@@ -188,41 +175,73 @@ $unit: px;
   align-items: center;
 }
 
-//行中线居中
+/* | -- | */
 .row-center {
   display: flex;
   align-items: center;
 }
-//后居中
+/* | __ | */
 .row-end {
   display: flex;
   align-items: center;
   justify-content: end;
 }
-//列中线居中
+/* - | - */
 .col-center {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-//flex居中
+.col-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* | - | */
 .box-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-//margin居中
+/* | - | */
 .margin-center {
   margin: 0 auto;
 }
 
-/** @hight-width */
+/** @hight-width
+  * h/w <1-200>  == heght/width: 1px-200px
+  * dh/dw <1-200>  == heght/width: 2px-400px
+  * calc-w/h-<1-200> == width: calc(100% - 1px)
+  * mh/mw <1-200> == min-heght/width: 1px-200px
+*/
 @for $i from 1 through 200 {
+  .hw-#{$i} {
+    height: #{$i}+#{$unit};
+    width: #{$i}+#{$unit};
+  }
   .h-#{$i} {
     height: #{$i}+#{$unit};
   }
   .w-#{$i} {
     width: #{$i}+#{$unit};
+  }
+  .mh-#{$i} {
+    min-height: #{$i}+#{$unit};
+  }
+  .mw-#{$i} {
+    min-width: #{$i}+#{$unit};
+  }
+  .dw-#{$i} {
+    width: calc($i * 2) + #{$unit};
+  }
+  .dh-#{$i} {
+    height: calc($i * 2) + #{$unit};
+  }
+  .calc-h-#{$i} {
+    height: calc(100% - #{$i}px);
+  }
+  .calc-w-#{$i} {
+    width: calc(100% - #{$i}px);
   }
 }
 @for $i from 1 through 100 {
@@ -243,6 +262,10 @@ $unit: px;
   height: 100%;
 }
 .w-full {
+  width: 100%;
+}
+.full {
+  height: 100%;
   width: 100%;
 }
 
@@ -274,12 +297,6 @@ $unit: px;
 .t-center {
   vertical-align: middle;
   text-align: center;
-}
-.t-left {
-  text-align: left;
-}
-.t-right {
-  text-align: right;
 }
 
 /** @overflow */
@@ -315,7 +332,7 @@ $unit: px;
 .pointer {
   cursor: pointer;
 }
-.no-pointer {
+.not-allowed {
   cursor: not-allowed;
 }
 .wait {
@@ -333,6 +350,9 @@ $unit: px;
 .text {
   cursor: text;
 }
+.underline {
+  text-decoration: underline;
+}
 
 /** @position */
 .absolute {
@@ -346,17 +366,6 @@ $unit: px;
 }
 .sticky {
   position: sticky;
-}
-
-/** @z-index */
-@for $i from 0 through 10 {
-  .z-index-#{$i} {
-    @if $i == 10 {
-      z-index: 2147483647;
-    } @else {
-      z-index: #{$i};
-    }
-  }
 }
 
 /** @display */
@@ -413,6 +422,7 @@ $unit: px;
 }
 
 /** @system-color */
+
 .bg-white {
   background-color: white;
 }
@@ -485,15 +495,15 @@ $unit: px;
 .color-transparent {
   color: transparent;
 }
-.color-333 {
-  color: #333;
+.border-color-white {
+  border-color: white;
 }
-.bg-333 {
-  background-color: #333;
+.border-color-black {
+  border-color: black;
 }
-.color-ccc {
-  color: #ccc;
+.border-color-red {
+  border-color: red;
 }
-.bg-ccc {
-  background-color: #ccc;
+.border-color-green {
+  border-color: green;
 }

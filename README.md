@@ -1,11 +1,81 @@
-# commonStyle -- Chzky
-* 通用的样式表,使用Scss进行预处理  
-* 通过改变`common.scss`中的`$unit`来改变单位
+# @chzky/style
 
-## 注意⚠️
-+ 小程序不需要引入 reset.scss --> html的某些标签在小程序中没有
+* 通用的样式表,使用Scss进行预处理
 
-## VScode 智能提示
+## 使用
+
+1. 引入所有样式 :
+
+`@use '@chzky/style/lib/mod.scss'`
+
+2. 引入通用样式
+
+`@use '@chzky/style/lib/cmomond.scss'`
+
+3. 引用浏览器默认消除样式
+
+`@use '@chzky/style/lib/reset.scss'`
+
+4. 引用主题样式
+
+`@use '@chzky/style/lib/theme.scss'`
+
+## 更改主题
+
+通过scss的`@use ... with( )`语法更改主题颜色
+
+### 示例
+
+```scss
+@use '@chzky/style/lib/mod.scss' with (
+  $unit:rm //将样式单位改成rm为单位
+)
+```
+
+### 默认主题样式
+
+#### @unit : 样式单位
+
++ `$unit : px`
+
+#### @color : 主题颜色
+
++ `$primary: #409eff `
++ `$success: #67c23a` 
++ `$warning: #e6a23c `
++ `$danger: #f56c6c `
++ `$info: #909399`
++ `$page: #f2f3f5 `
+
+#### @text-color : 文字颜色
+
++ `$primary-t: #303133`
++ `$regular: #606266`
++ `$secondary: #909399` 
++ `$placeholder: #a8abb2` 
++ `$disabled: #c0c4cc` 
+
+#### @border : 边框颜色
+
++ `$darker: #cdd0d6` 
++ `$dark: #d4d7de` 
++ `$base: #dcdfe6` 
++ `$light: #e4e7ed` 
++ `$lighter: #ebeef5` 
++ `$extra-light: #f2f6fc` 
+
+#### @shadow : 阴影颜色
+
++ `$basic-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08) `
++ `$light-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12)`
++ `$lighter-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12) `
+
++ `$dark-shadow: 0px 16px 48px 16px rgba(0, 0, 0, 0.08), 0px 12px 32px rgba(0, 0, 0, 0.12),0px 8px 16px -8px rgba(0, 0, 0, 0.16) `
+
+## VScode 智能提示 
+
+使用vscode 提示后不需要
+
 1. 安装插件: `SCSS Everywhere`
-2. 创建工作空间
+2. 创建工作空间 `.vscode > setting.json`
 3. `"settings":{"html-css-class-completion.includeGlobPattern":"存放地址""}.{scss}`
