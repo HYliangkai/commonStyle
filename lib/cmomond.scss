@@ -269,6 +269,13 @@ $unit: px !default;
   width: 100%;
 }
 
+/** @line-height */
+@for $i from 1 through 50 {
+  .lh-#{$i} {
+    line-height: $i;
+  }
+}
+
 /** @text */
 .t-wrap {
   word-wrap: break-word;
