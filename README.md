@@ -27,18 +27,23 @@
 ### 示例
 
 ```scss
-@use '@chzky/style/lib/mod.scss' with (
+@use '@chzky/style/lib/cmomond.scss' with (
   $unit:rm //将样式单位改成rm为单位
-)
+);
+@use '@chzky/style/lib/theme.scss' with (
+  $primary:#f00 //将主题颜色改成红色
+);
+@use '@chzky/style/lib/reset.scss'
+// ps : 如果想要更改主题就必须分开引入文件(三个文件分开引入)
 ```
 
 ### 默认主题样式
 
-#### @unit : 样式单位
+#### @unit : 样式单位 <cmomond.scss>
 
 + `$unit : px`
 
-#### @color : 主题颜色
+#### @color : 主题颜色 <theme.scss>
 
 + `$primary: #409eff `
 + `$success: #67c23a` 
@@ -47,7 +52,7 @@
 + `$info: #909399`
 + `$page: #f2f3f5 `
 
-#### @text-color : 文字颜色
+#### @text-color : 文字颜色 <theme.scss>
 
 + `$primary-t: #303133`
 + `$regular: #606266`
@@ -55,7 +60,7 @@
 + `$placeholder: #a8abb2` 
 + `$disabled: #c0c4cc` 
 
-#### @border : 边框颜色
+#### @border : 边框颜色 <theme.scss>
 
 + `$darker: #cdd0d6` 
 + `$dark: #d4d7de` 
@@ -64,7 +69,7 @@
 + `$lighter: #ebeef5` 
 + `$extra-light: #f2f6fc` 
 
-#### @shadow : 阴影颜色
+#### @shadow : 阴影颜色 <theme.scss>
 
 + `$basic-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08) `
 + `$light-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12)`
@@ -72,10 +77,10 @@
 
 + `$dark-shadow: 0px 16px 48px 16px rgba(0, 0, 0, 0.08), 0px 12px 32px rgba(0, 0, 0, 0.12),0px 8px 16px -8px rgba(0, 0, 0, 0.16) `
 
-## VScode 智能提示 
+## 如何使用VScode进行智能提示 
 
-使用vscode 提示后不需要
+使用vscode 提示后不需要记住所有的类名,只需要输入部分即可联想补全
 
-1. 安装插件: `SCSS Everywhere`
-2. 创建工作空间 `.vscode > setting.json`
-3. `"settings":{"html-css-class-completion.includeGlobPattern":"存放地址""}.{scss}`
+1. 安装插件: [SCSS Everywhere](https://marketplace.visualstudio.com/items?itemName=gencer.html-slim-scss-css-class-completion)
+2. 创建工作空间 `.vscode > setting.json` or `xxx.code-workspace`
+3. 在settings中设置 : `"settings":{  "html-css-class-completion.remoteStyleSheets": ["https://cdn.jsdelivr.net/npm/@chzky/style/lib/cmomond.css"]   }`

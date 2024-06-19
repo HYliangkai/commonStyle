@@ -28,6 +28,12 @@ jobs:
         with:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
+      # install sass
+      - name: Install sass
+        run: npm install sass -g
+      # Sass Compile
+      - name: Sass Compile
+        run: sass ./lib/mod.scss ./lib/mod.css
       # Publish
       - name: Publish package
         run: npm publish
