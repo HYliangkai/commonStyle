@@ -33,7 +33,7 @@ jobs:
         run: npm install sass -g
       # Sass Compile
       - name: Sass Compile
-        run: sass ./lib/mod.scss ./lib/mod.css
+        run: sass ./lib/
       # Publish
       - name: Publish package
         run: npm publish

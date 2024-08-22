@@ -305,6 +305,12 @@ $unit: px !default;
   vertical-align: middle;
   text-align: center;
 }
+.t-right {
+  text-align: right;
+}
+.t-left {
+  text-align: left;
+}
 
 /** @overflow */
 .x-hidden {
@@ -426,6 +432,11 @@ $unit: px !default;
 }
 .us-all {
   user-select: all;
+}
+
+/** @pointer-events */
+.p-event-none {
+  pointer-events: none;
 }
 
 /** @system-color */
