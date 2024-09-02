@@ -276,6 +276,21 @@ $unit: px !default;
   }
 }
 
+/** @align-content */
+
+.align-content-start {
+  align-content: start;
+}
+.align-content-center {
+  align-content: center;
+}
+.align-content-between {
+  align-content: space-between;
+}
+.align-content-around {
+  align-content: space-around;
+}
+
 /** @text */
 .t-wrap {
   word-wrap: break-word;

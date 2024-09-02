@@ -1,6 +1,6 @@
 {
   "name": "@chzky/style",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "https://github.com/HYliangkai",
   "description": "commond scss style ",
   "main": "./lib/mod.scss",
