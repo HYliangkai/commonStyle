@@ -1,0 +1,50 @@
+/** @unit */
+$unit: px !default;
+
+/** @color */
+$primary: #409eff !default;
+$success: #67c23a !default;
+$warning: #e6a23c !default;
+$danger: #f56c6c !default;
+$info: #909399 !default;
+$page: #f2f3f5 !default;
+
+/** @text-color */
+$primary-t: #303133 !default;
+$regular: #606266 !default;
+$secondary: #909399 !default;
+$placeholder: #a8abb2 !default;
+$disabled: #c0c4cc !default;
+
+/** @border */
+$darker: #cdd0d6 !default;
+$dark: #d4d7de !default;
+$base: #dcdfe6 !default;
+$light: #e4e7ed !default;
+$lighter: #ebeef5 !default;
+$extra-light: #f2f6fc !default;
+
+/** @shadow */
+$basic-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08) !default;
+$light-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12) !default;
+$lighter-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12) !default;
+$dark-shadow: 0px 16px 48px 16px rgba(0, 0, 0, 0.08), 0px 12px 32px rgba(0, 0, 0, 0.12),
+  0px 8px 16px -8px rgba(0, 0, 0, 0.16) !default;
+
+/** @gap */
+$mini-gap: 4px !default;
+$small-gap: 8px !default;
+$medium-gap: 16px !default;
+$large-gap: 24px !default;
+
+/** @radius */
+$mini-radius: 2px !default;
+$small-radius: 4px !default;
+$medium-radius: 6px !default;
+$large-radius: 8px !default;
+
+/** @font-size */
+$mini-font-size: 12px !default;
+$small-font-size: 14px !default;
+$medium-font-size: 16px !default;
+$large-font-size: 18px !default;

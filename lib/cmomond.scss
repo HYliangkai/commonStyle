@@ -1,5 +1,4 @@
-//单位
-$unit: px !default;
+@use './variable.scss' as *;
 
 /** @box */
 @for $i from 1 through 100 {

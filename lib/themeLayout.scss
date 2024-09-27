@@ -1,0 +1,216 @@
+@use './variable.scss' as *;
+/** @gap */
+.mim-r {
+  margin-right: $mini-gap;
+}
+.mim-l {
+  margin-left: $mini-gap;
+}
+.mim-t {
+  margin-top: $mini-gap;
+}
+.mim-b {
+  margin-bottom: $mini-gap;
+}
+.mim-y {
+  margin-top: $mini-gap;
+  margin-bottom: $mini-gap;
+}
+.mim-x {
+  margin-left: $mini-gap;
+  margin-right: $mini-gap;
+}
+.mi-m {
+  margin: $mini-gap;
+}
+.mip-r {
+  padding-right: $mini-gap;
+}
+.mip-l {
+  padding-left: $mini-gap;
+}
+.mip-t {
+  padding-top: $mini-gap;
+}
+.mip-b {
+  padding-bottom: $mini-gap;
+}
+.mip-y {
+  padding-top: $mini-gap;
+  padding-bottom: $mini-gap;
+}
+.mip-x {
+  padding-left: $mini-gap;
+  padding-right: $mini-gap;
+}
+.mi-p {
+  padding: $mini-gap;
+}
+
+.sm-r {
+  margin-right: $small-gap;
+}
+.sm-l {
+  margin-left: $small-gap;
+}
+.sm-t {
+  margin-top: $small-gap;
+}
+.sm-b {
+  margin-bottom: $small-gap;
+}
+.sm-y {
+  margin-top: $small-gap;
+  margin-bottom: $small-gap;
+}
+.sm-x {
+  margin-left: $small-gap;
+  margin-right: $small-gap;
+}
+.s-m {
+  margin: $small-gap;
+}
+.mm-r {
+  margin-right: $medium-gap;
+}
+.mm-l {
+  margin-left: $medium-gap;
+}
+.mm-t {
+  margin-top: $medium-gap;
+}
+.mm-b {
+  margin-bottom: $medium-gap;
+}
+.mm-y {
+  margin-top: $medium-gap;
+  margin-bottom: $medium-gap;
+}
+.mm-x {
+  margin-left: $medium-gap;
+  margin-right: $medium-gap;
+}
+.m-m {
+  margin: $medium-gap;
+}
+.lm-r {
+  margin-right: $large-gap;
+}
+.lm-l {
+  margin-left: $large-gap;
+}
+.lm-t {
+  margin-top: $large-gap;
+}
+.lm-b {
+  margin-bottom: $large-gap;
+}
+.lm-y {
+  margin-top: $large-gap;
+  margin-bottom: $large-gap;
+}
+.lm-x {
+  margin-left: $large-gap;
+  margin-right: $large-gap;
+}
+.l-m {
+  margin: $large-gap;
+}
+.sp-l {
+  padding-left: $small-gap;
+}
+.sp-r {
+  padding-right: $small-gap;
+}
+.sp-t {
+  padding-top: $small-gap;
+}
+.sp-b {
+  padding-bottom: $small-gap;
+}
+.sp-y {
+  padding-top: $small-gap;
+  padding-bottom: $small-gap;
+}
+.sp-x {
+  padding-left: $small-gap;
+  padding-right: $small-gap;
+}
+.s-p {
+  padding: $small-gap;
+}
+.mp-l {
+  padding-left: $medium-gap;
+}
+.mp-r {
+  padding-right: $medium-gap;
+}
+.mp-t {
+  padding-top: $medium-gap;
+}
+.mp-b {
+  padding-bottom: $medium-gap;
+}
+.mp-y {
+  padding-top: $medium-gap;
+  padding-bottom: $medium-gap;
+}
+.mp-x {
+  padding-left: $medium-gap;
+  padding-right: $medium-gap;
+}
+.m-p {
+  padding: $medium-gap;
+}
+.lp-l {
+  padding-left: $large-gap;
+}
+.lp-r {
+  padding-right: $large-gap;
+}
+.lp-t {
+  padding-top: $large-gap;
+}
+.lp-b {
+  padding-bottom: $large-gap;
+}
+.lp-y {
+  padding-top: $large-gap;
+  padding-bottom: $large-gap;
+}
+.lp-x {
+  padding-left: $large-gap;
+  padding-right: $large-gap;
+}
+.l-p {
+  padding: $large-gap;
+}
+
+/** @radius */
+
+.mi-radius {
+  border-radius: $mini-radius;
+}
+.s-radius {
+  border-radius: $small-radius;
+}
+.m-radius {
+  border-radius: $medium-radius;
+}
+.l-radius {
+  border-radius: $large-radius;
+}
+
+/** @font-size */
+.mi-fs {
+  font-size: $mini-font-size;
+}
+.s-fs {
+  font-size: $small-font-size;
+}
+.m-fs {
+  font-size: $medium-font-size;
+}
+.l-fs {
+  font-size: $large-font-size;
+}
