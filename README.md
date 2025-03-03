@@ -108,5 +108,8 @@
 3. 在settings中设置 : 
 
 ```json
-"settings":{  "html-css-class-completion.remoteStyleSheets": ["https://cdn.jsdelivr.net/npm/@chzky/style/lib/mod.css"] 
+"settings":
+  {  
+  "html-css-class-completion.remoteStyleSheets": ["https://cdn.jsdelivr.net/npm/@chzky/style/lib/mod.css"] 
+  }
 ```
