@@ -81,6 +81,7 @@
 
 #### @gap : 间距 
 
++ `$mini-gap: 4px`
 + `$small-gap: 8px`
 + `$medium-gap: 16px`
 + `$large-gap: 24px`
