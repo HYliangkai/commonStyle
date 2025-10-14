@@ -1,18 +1,20 @@
 {
-  "name": "@chzky/style",
-  "version": "1.1.2",
-  "author": "https://github.com/HYliangkai",
-  "description": "commond scss style ",
-  "main": "./lib/mod.scss",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "scss",
-    "commond"
-  ],
-  "license": "ISC"
+	"name": "@chzky/style",
+	"version": "1.1.3",
+	"author": "https://github.com/HYliangkai",
+	"description": "commond scss style ",
+	"main": "./lib/mod.scss",
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {
+		"build:dev": "sass ./lib/:./dist/",
+		"build:prod": "sass ./lib/:./dist/ -s compressed"
+	},
+	"keywords": [
+		"css",
+		"scss",
+		"commond"
+	],
+	"license": "ISC"
 }

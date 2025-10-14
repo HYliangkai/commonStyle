@@ -248,10 +248,10 @@
 }
 
 /** @hight-width
-  * h/w <1-200>  == heght/width: 1px-200px
-  * dh/dw <1-200>  == heght/width: 2px-400px
-  * calc-w/h-<1-200> == width: calc(100% - 1px)
-  * mh/mw <1-200> == min-heght/width: 1px-200px
+  * h/w <1-200>  == heght/width: 1~200(unit)
+  * dh/dw <1-200>  == heght/width: 2~400(unit)
+  * calc-w/h-<1-200> == width: calc(100% - 1(unit))
+  * mh/mw <1-200> == min-heght/width: 1~200(unit)
 */
 @for $i from 1 through 200 {
   .hw-#{$i} {
@@ -280,6 +280,37 @@
     height: calc(100% - #{$i}px);
   }
   .calc-w-#{$i} {
+    width: calc(100% - #{$i}px);
+  }
+
+  /* absolute px */
+
+  .h-#{$i}px {
+    height: $i * 1px;
+  }
+  .w-#{$i}px {
+    width: $i * 1px;
+  }
+  .hw-#{$i}px {
+    height: $i * 1px;
+    width: $i * 1px;
+  }
+  .mh-#{$i}px {
+    min-height: $i * 1px;
+  }
+  .mw-#{$i}px {
+    min-width: $i * 1px;
+  }
+  .dh-#{$i}px {
+    height: $i * 2px;
+  }
+  .dw-#{$i}px {
+    width: $i * 2px;
+  }
+  .calc-h-#{$i}px {
+    height: calc(100% - #{$i}px);
+  }
+  .calc-w-#{$i}px {
     width: calc(100% - #{$i}px);
   }
 }
@@ -428,14 +459,43 @@
 }
 
 /** @position */
+.relative {
+  position: relative;
+}
 .absolute {
   position: absolute;
 }
+
+@for $i from 1 through 200 {
+  .top-#{$i} {
+    top: #{$i}+#{$unit};
+  }
+  .right-#{$i} {
+    right: #{$i}+#{$unit};
+  }
+  .bottom-#{$i} {
+    bottom: #{$i}+#{$unit};
+  }
+  .left-#{$i} {
+    left: #{$i}+#{$unit};
+  }
+
+  .top-#{$i}px {
+    top: $i * 1px;
+  }
+  .right-#{$i}px {
+    right: $i * 1px;
+  }
+  .bottom-#{$i}px {
+    bottom: $i * 1px;
+  }
+  .left-#{$i}px {
+    left: $i * 1px;
+  }
+}
+
 .fixed {
   position: fixed;
-}
-.relative {
-  position: relative;
 }
 .sticky {
   position: sticky;

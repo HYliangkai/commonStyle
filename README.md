@@ -111,6 +111,7 @@
 ```json
 "settings":
   {  
+  // 实际在代码中引入什么样式就写什么样式  `lib/xxx.css`
   "html-css-class-completion.remoteStyleSheets": ["https://cdn.jsdelivr.net/npm/@chzky/style/lib/mod.css"] 
   }
 ```
