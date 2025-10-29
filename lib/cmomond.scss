@@ -346,6 +346,91 @@
   }
 }
 
+/** use-layout  : 开启布局模式 - 将行和列分为24 , 同时支持响应式布局
+<div class="use-layout dh-200">
+
+  <div class="use-row row-span-m">
+    <div class="col-span-s"></div>
+    <div class="col-span-l"></div>
+  </div>
+
+  <div class="use-row row-span-m">
+    <div class="col-span-12"></div>
+    <div class="col-span-m"></div>
+  </div>
+
+</div>
+ */
+.use-layout {
+  .use-row {
+    display: flex;
+    flex-wrap: nowrap;
+
+    @for $i from 1 through 24 {
+      .col-span-#{$i} {
+        width: calc(100% * #{$i} / 24);
+        height: 100%;
+      }
+    }
+
+    .col-span-xl {
+      width: calc(100% * 24 / 24);
+      height: 100%;
+    }
+
+    .col-span-l {
+      width: calc(100% * 18 / 24);
+      height: 100%;
+    }
+
+    .col-span-m {
+      width: calc(100% * 12 / 24);
+      height: 100%;
+    }
+
+    .col-span-s {
+      width: calc(100% * 6 / 24);
+      height: 100%;
+    }
+
+    .col-span-xs {
+      width: calc(100% * 1 / 24);
+      height: 100%;
+    }
+  }
+
+  @for $i from 1 through 24 {
+    .row-span-#{$i} {
+      height: calc(100% * #{$i} / 24);
+      width: 100%;
+    }
+  }
+
+  .row-span-xl {
+    height: calc(100% * 24 / 24);
+    width: 100%;
+  }
+
+  .row-span-l {
+    height: calc(100% * 18 / 24);
+    width: 100%;
+  }
+
+  .row-span-m {
+    height: calc(100% * 12 / 24);
+    width: 100%;
+  }
+
+  .row-span-s {
+    height: calc(100% * 6 / 24);
+    width: 100%;
+  }
+
+  .row-span-xs {
+    height: calc(100% * 1 / 24);
+  }
+}
+
 /** @align-content */
 
 .align-content-start {
