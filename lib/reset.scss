@@ -1,4 +1,4 @@
-//清除浏览器默认样式
+//清除浏览器默认样式 + 滚动条美化
 
 * {
   box-sizing: border-box;
@@ -448,4 +448,20 @@ textarea {
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+
+/* 全局滚动条美化 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+html {
+  scrollbar-width: thin; /* Firefox */
 }
