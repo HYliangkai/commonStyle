@@ -34,6 +34,35 @@ $lighter-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12) !default;
 $dark-shadow: 0px 16px 48px 16px rgba(0, 0, 0, 0.08), 0px 12px 32px rgba(0, 0, 0, 0.12),
   0px 8px 16px -8px rgba(0, 0, 0, 0.16) !default;
 
+/** @dark */
+
+/* @color */
+$dk-primary: #bd93f9 !default; // Dracula 紫色 (原 primary)
+$dk-success: #50fa7b !default; // Dracula 青绿色 (原 success)
+$dk-warning: #f1fa8c !default; // Dracula 黄色 (原 warning)
+$dk-danger: #ff5555 !default; // Dracula 红色 (原 danger)
+$dk-info: #8be9fd !default; // Dracula 天蓝色 (原 info)
+$dk-page: #282a36 !default; // Dracula 背景主色
+/* @text-color */
+$dk-primary-t: #f8f8f2 !default; // 主文本 (Dracula 前景色)
+$dk-regular: #e0e0e0 !default; // 次级文本 (稍弱化)
+$dk-secondary: #bfbfbf !default; // 三级文本
+$dk-placeholder: #6272a4 !default; // 占位符 (Dracula 注释色)
+$dk-disabled: #44475a !default; // 禁用状态 (Dracula 选择色)
+/* @border */
+$dk-darker: #44475a !default; // 边框深色 (Dracula 选择色)
+$dk-dark: #505361 !default; // 边框中深色
+$dk-base: #6272a4 !default; // 基础边框 (Dracula 注释色)
+$dk-light: #707382 !default; // 边框浅色
+$dk-lighter: #808394 !default; // 边框更浅色
+$dk-extra-light: #9093a4 !default; // 边框最浅色
+/* @shadow */
+$dk-basic-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.3) !default;
+$dk-light-shadow: 0 0 8px rgba(0, 0, 0, 0.3) !default;
+$dk-lighter-shadow: 0 0 4px rgba(0, 0, 0, 0.25) !default;
+$dk-dark-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.4),
+  0 2px 6px -2px rgba(0, 0, 0, 0.4) !default;
+
 /** @gap */
 $mini-gap: 4px !default;
 $small-gap: 8px !default;

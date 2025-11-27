@@ -1,63 +1,124 @@
 //主题 , 可根据现有项目自定义
 @use './variable.scss' as *;
 
+@mixin dark-mode {
+  :where(html.dark) & {
+    @content;
+  }
+}
+
 /** @color */
 .bg-primary {
   background-color: $primary;
+  @include dark-mode {
+    background: $dk-primary;
+  }
 }
 .bg-success {
   background-color: $success;
+  @include dark-mode {
+    background: $dk-success;
+  }
 }
 .bg-warning {
   background-color: $warning;
+  @include dark-mode {
+    background: $dk-warning;
+  }
 }
 .bg-danger {
   background-color: $danger;
+  @include dark-mode {
+    background: $dk-danger;
+  }
 }
 .bg-info {
   background-color: $info;
+  @include dark-mode {
+    background: $dk-info;
+  }
 }
 .bg-page {
   background-color: $page;
+  @include dark-mode {
+    background: $dk-page;
+  }
 }
 
 /** @text-color */
-
+.text-primary {
+  @include dark-mode {
+    color: $dk-primary-t;
+  }
+}
 .color-primary {
   color: $primary;
+  @include dark-mode {
+    color: $dk-primary;
+  }
 }
 .color-regular {
   color: $regular;
+  @include dark-mode {
+    color: $dk-regular;
+  }
 }
 .color-secondary {
   color: $secondary;
+  @include dark-mode {
+    color: $dk-secondary;
+  }
 }
 .color-placeholder {
   color: $placeholder;
+  @include dark-mode {
+    color: $dk-placeholder;
+  }
 }
 .color-disabled {
   color: $disabled;
+  @include dark-mode {
+    color: $dk-disabled;
+  }
 }
 
 /** @border */
 
 .border-darker {
   border-color: $darker;
+  @include dark-mode {
+    border-color: $dk-darker;
+  }
 }
 .border-dark {
   border-color: $dark;
+  @include dark-mode {
+    border-color: $dk-dark;
+  }
 }
 .border-base {
   border-color: $base;
+  @include dark-mode {
+    border-color: $dk-base;
+  }
 }
 .border-light {
   border-color: $light;
+  @include dark-mode {
+    border-color: $dk-light;
+  }
 }
 .border-lighter {
   border-color: $lighter;
+  @include dark-mode {
+    border-color: $dk-lighter;
+  }
 }
 .border-extra-light {
   border-color: $extra-light;
+  @include dark-mode {
+    border-color: $dk-extra-light;
+  }
 }
 
 /** @radius */
@@ -75,34 +136,58 @@
 
 .basic-shadow {
   box-shadow: $basic-shadow;
+  @include dark-mode {
+    box-shadow: $dk-basic-shadow;
+  }
 }
 .light-shadow {
   box-shadow: $light-shadow;
+  @include dark-mode {
+    box-shadow: $dk-light-shadow;
+  }
 }
 .lighter-shadow {
   box-shadow: $lighter-shadow;
+  @include dark-mode {
+    box-shadow: $dk-lighter-shadow;
+  }
 }
 .dark-shadow {
   box-shadow: $dark-shadow;
+  @include dark-mode {
+    box-shadow: $dk-dark-shadow;
+  }
 }
 .hover-basic-shadow {
   &:hover {
     box-shadow: $basic-shadow;
+    @include dark-mode {
+      box-shadow: $dk-basic-shadow;
+    }
   }
 }
 .hover-light-shadow {
   &:hover {
     box-shadow: $light-shadow;
+    @include dark-mode {
+      box-shadow: $dk-light-shadow;
+    }
   }
 }
 .hover-lighter-shadow {
   &:hover {
     box-shadow: $lighter-shadow;
+    @include dark-mode {
+      box-shadow: $dk-lighter-shadow;
+    }
   }
 }
 .hover-dark-shadow {
   &:hover {
     box-shadow: $dark-shadow;
+    @include dark-mode {
+      box-shadow: $dk-dark-shadow;
+    }
   }
 }
 
